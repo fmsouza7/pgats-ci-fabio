@@ -8,7 +8,11 @@ e2e-tests:
   when: manual    # equivale ao workflow_dispatch (execução manual)
   script:
     # clone do projeto já é feito automaticamente pelo GitLab Runner
-    - npm install -g yarn
+    #- npm install -g yarn
+    # Como o yarn ja esta instalado será executado um comando somente para verificar a versão
+    - yarn --version
+    - yarn cache clean
+    - yarn install --force
     - yarn
     - yarn playwright install
     - yarn run e2e
