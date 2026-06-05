@@ -1,0 +1,14 @@
+stages:
+  - e2e
+
+# job principal
+e2e-tests:
+  stage: e2e
+  image: node:24  # usa imagem oficial do Node.js 24.x
+  when: manual    # equivale ao workflow_dispatch (execução manual)
+  script:
+    # clone do projeto já é feito automaticamente pelo GitLab Runner
+    - npm install -g yarn
+    - yarn
+    - yarn playwright install
+    - yarn run e2e
