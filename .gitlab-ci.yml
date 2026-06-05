@@ -14,5 +14,7 @@ e2e-tests:
     - yarn cache clean
     - yarn install --force
     - yarn
-    - yarn playwright install
-    - yarn run e2e
+    # 1. Instala os navegadores do Playwright E as dependências de sistema do Linux necessárias
+    - npx playwright install --with-deps
+    # 2. Executa os testes garantindo que variáveis de CI/Headless estejam ativas
+    - CI=true yarn run e2e
