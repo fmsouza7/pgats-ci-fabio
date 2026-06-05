@@ -35,6 +35,9 @@ jobs:
             - name: Instalando dependências
               run: yarn
             
+            - name: Executando testes unitários
+              run: yarn test --coverage
+            
             # instalação dos Browsers do Playwright
             - name: Instalando Browsers do Playwright
               run: yarn playwright install
@@ -42,11 +45,9 @@ jobs:
             # executar os testes e2e
             - name: Executando testes e2e
               run: yarn run e2e
-
-            - name: Test Report
-              uses: dorny/test-reporter@v3
-              if: ${{ !cancelled() }}       # run this step even if previous step failed
+            
+            - name: Upload de resultados
+              uses: actions/upload-artifact@v4
               with:
-                name: Resultado dos Testes  # Name of the check run which will be created
-                path: reports/jest-*.xml    # Path to test results
-                reporter: jest-junit        # Format of test results
+                name: relatorio-e2e
+                path: ./reports/
