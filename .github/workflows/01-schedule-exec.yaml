@@ -1,0 +1,58 @@
+# CI de Nível 01 - Disparo Manual através de clique
+
+# nome da pipeline
+name: "Schedule Execution"
+
+# gatilhos / triggers - regras de disparo
+# gatilho manual = workflow_dispatch
+
+on:
+  schedule:
+    # Cronograma de Execução
+    # 1 - Minuto, 2 - hora, 3 - dia do mês, 4 - mês, 5 - dia da semana
+    cron: '27 16 * * 6'
+#tarefas dentro da pipeline = jobs
+
+jobs:
+    #nome do job
+    e2e-tests:
+        # maquina onde o job vai rodar
+        #Exercicio 2
+        #runs-on: ubuntu-latest
+        #Exercicio 3
+        runs-on: self-hosted
+
+        # passos do job
+        steps:
+            # clone do projeto
+            - uses: actions/checkout@v4
+
+            # instalação do node
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 24.x
+
+            # instalação do Yarn
+            - name: Instalando Yarn
+              run: npm install -g yarn
+            
+            # instalação das dependências
+            - name: Instalando dependências
+              run: yarn
+            
+            - name: Executando testes unitários
+              run: yarn test --coverage
+            
+            # instalação dos Browsers do Playwright
+            - name: Instalando Browsers do Playwright
+              run: yarn playwright install
+            
+            # executar os testes e2e
+            - name: Executando testes e2e
+              run: yarn run e2e
+            
+            - name: Upload de resultados
+              uses: actions/upload-artifact@v4
+              with:
+                name: relatorio-e2e
+                path: ./reports/
