@@ -11,6 +11,7 @@ on:
     # Cronograma de Execução
     # 1 - Minuto, 2 - hora, 3 - dia do mês, 4 - mês, 5 - dia da semana
     - cron: '*/3 * * * *'
+    
 #tarefas dentro da pipeline = jobs
 
 jobs:
