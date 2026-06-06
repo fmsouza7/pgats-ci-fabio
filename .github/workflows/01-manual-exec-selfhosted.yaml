@@ -1,16 +1,14 @@
 # CI de Nível 01 - Disparo Manual através de clique
 
 # nome da pipeline
-name: "Schedule Execution"
+name: "Execução Manual"
 
 # gatilhos / triggers - regras de disparo
 # gatilho manual = workflow_dispatch
 
 on:
-  schedule:
-    # Cronograma de Execução
-    # 1 - Minuto, 2 - hora, 3 - dia do mês, 4 - mês, 5 - dia da semana
-    - cron: '35 16 * * 6'
+    workflow_dispatch:
+
 #tarefas dentro da pipeline = jobs
 
 jobs:
@@ -20,7 +18,7 @@ jobs:
         #Exercicio 2
         #runs-on: ubuntu-latest
         #Exercicio 3
-        runs-on: ubuntu-latest
+        runs-on: self-hosted
 
         # passos do job
         steps:
