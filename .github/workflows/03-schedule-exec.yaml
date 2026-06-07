@@ -10,7 +10,11 @@ on:
   schedule:
     # Cronograma de Execução
     # 1 - Minuto, 2 - hora, 3 - dia do mês, 4 - mês, 5 - dia da semana
-    - cron: '*/6 * * * *'
+    # Roda a cada 30 min
+    #- cron: '*/30 * * * *'
+
+    # Roda toda sexta feira as 00:00
+    - cron: '0 0 * * 5'
 
 #tarefas dentro da pipeline = jobs
 
