@@ -10,15 +10,11 @@ on:
     workflow_dispatch:
 
 #tarefas dentro da pipeline = jobs
-
 jobs:
     #nome do job
     e2e-tests:
         # maquina onde o job vai rodar
-        #Exercicio 2
         runs-on: ubuntu-latest
-        #Exercicio 3
-        #runs-on: self-hosted
 
         # passos do job
         steps:
