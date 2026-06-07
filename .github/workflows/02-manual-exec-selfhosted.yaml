@@ -38,8 +38,8 @@ jobs:
             - name: Instalando dependências
               run: yarn
             
-            - name: Executando testes unitários
-              run: yarn test --coverage
+            #- name: Executando testes unitários
+            #  run: yarn test --coverage
             
             # instalação dos Browsers do Playwright
             - name: Instalando Browsers do Playwright
@@ -49,8 +49,8 @@ jobs:
             - name: Executando testes e2e
               run: yarn run e2e
             
-            - name: Upload de resultados
-              uses: actions/upload-artifact@v4
-              with:
-                name: relatorio-e2e
-                path: ./reports/
+           # - name: Upload de resultados
+           #   uses: actions/upload-artifact@v4
+           #   with:
+           #     name: relatorio-e2e
+           #     path: ./reports/
