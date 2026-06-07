@@ -35,8 +35,8 @@ jobs:
               run: yarn
 
             # execução de testes unitarios - Exercicio 2
-            #- name: Executando testes unitários
-            #  run: yarn test --coverage
+            - name: Executando testes unitários
+              run: yarn test --coverage
 
             # instalação dos Browsers do Playwright
             - name: Instalando Browsers do Playwright
