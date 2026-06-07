@@ -38,6 +38,7 @@ jobs:
             - name: Instalando dependências
               run: yarn
             
+            # execução de testes unitarios - Exercicio 2
             - name: Executando testes unitários
               run: yarn test --coverage
             
@@ -49,6 +50,7 @@ jobs:
             - name: Executando testes e2e
               run: yarn run e2e
             
+            # geração de relatorios - Exercicio 2
             - name: Upload de resultados
               uses: actions/upload-artifact@v4
               with:
