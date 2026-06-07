@@ -1,0 +1,11 @@
+﻿{
+  "agentId": 21,
+  "agentName": "DESKTOP-P8LQ183",
+  "poolId": 1,
+  "poolName": "Default",
+  "serverUrl": "https://pipelinesghubeus3.actions.githubusercontent.com/9lyCmcw4NlYklr5p1jiewUJmDvJKLcPL36eBUSNLwRPYqKGJhE/",
+  "gitHubUrl": "https://github.com/fmsouza7/pgats-ci-fabio",
+  "workFolder": "_work",
+  "useV2Flow": true,
+  "serverUrlV2": "https://broker.actions.githubusercontent.com/"
+}

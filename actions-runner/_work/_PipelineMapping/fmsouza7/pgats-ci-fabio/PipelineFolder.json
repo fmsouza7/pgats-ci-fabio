@@ -1,0 +1,12 @@
+﻿{
+  "repositoryName": "fmsouza7/pgats-ci-fabio",
+  "pipelineDirectory": "pgats-ci-fabio",
+  "workspaceDirectory": "pgats-ci-fabio\\pgats-ci-fabio",
+  "repositories": {
+    "fmsouza7/pgats-ci-fabio": {
+      "repositoryPath": "pgats-ci-fabio\\pgats-ci-fabio",
+      "lastRunOn": "06/05/2026 22:05:44 -03:00"
+    }
+  },
+  "lastRunOn": "06/05/2026 22:11:41 -03:00"
+}
