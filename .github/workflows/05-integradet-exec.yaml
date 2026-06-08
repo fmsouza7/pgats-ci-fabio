@@ -114,6 +114,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [unidade, e2e-tests]
 
+    # passos do job
     steps:
       - name: Simulação de Deploy
         run: echo 'Deploy sendo realizado...'  
