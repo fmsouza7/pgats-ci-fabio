@@ -6,3 +6,4 @@ reports
 /playwright/.cache/
 results.xml
 node_modules
+actions-runner
