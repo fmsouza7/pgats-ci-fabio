@@ -1,7 +1,7 @@
 # CI de Nível 04 - Pipeline Inegrada ao Build do Código
 
 # nome da pipeline
-name: "Execução Integrada"
+name: 'Execução Integrada'
 
 # gatilhos / triggers - regras de disparo
 # gatilho manual = workflow_dispatch
@@ -9,7 +9,7 @@ name: "Execução Integrada"
 # gatilho por conclusão de oura pipeline = workflow-run
 
 on:
-    workflow_dispatch:
+  workflow_dispatch:
 
 #tarefas dentro da pipeline = jobs
 jobs:
@@ -17,7 +17,7 @@ jobs:
   inspecao:
     # maquina onde o job vai rodar
     runs-on: ubuntu-latest
-      
+
     # passos do job
     steps:
       # clone do projeto
@@ -26,12 +26,12 @@ jobs:
       # instalação do node
       - uses: actions/setup-node@v4
         with:
-            node-version: latest
+          node-version: latest
 
       # instalação do Yarn
       - name: Instalando Yarn
         run: npm install -g yarn
-      
+
       # instalação das dependências
       - name: Instalando dependências
         run: yarn
@@ -50,12 +50,12 @@ jobs:
       # instalação do node
       - uses: actions/setup-node@v4
         with:
-            node-version: latest
+          node-version: latest
 
       # instalação do Yarn
       - name: Instalando Yarn
         run: npm install -g yarn
-      
+
       # instalação das dependências
       - name: Instalando dependências
         run: yarn
@@ -63,7 +63,7 @@ jobs:
       # Executar os Testes Unitários
       - name: Rodando testes unitários
         run: yarn run test
-      
+
       # geração de relatorios
       - name: Upload de resultados
         uses: actions/upload-artifact@v4
@@ -84,12 +84,12 @@ jobs:
       # instalação do node
       - uses: actions/setup-node@v4
         with:
-            node-version: latest
+          node-version: latest
 
       # instalação do Yarn
       - name: Instalando Yarn
         run: npm install -g yarn
-      
+
       # instalação das dependências
       - name: Instalando dependências
         run: yarn
@@ -105,7 +105,7 @@ jobs:
       # instalação dos Browsers do Playwright
       - name: Instalando Browsers do Playwright
         run: yarn playwright install
-      
+
       # executar os testes e2e
       - name: Executando testes e2e
         run: yarn run e2e
@@ -117,4 +117,4 @@ jobs:
     # passos do job
     steps:
       - name: Simulação de Deploy
-        run: echo 'Deploy sendo realizado...'  
+        run: echo 'Deploy sendo realizado...'
