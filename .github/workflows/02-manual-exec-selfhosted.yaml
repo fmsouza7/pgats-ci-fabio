@@ -1,7 +1,7 @@
 # CI de Nível 01 - Disparo Manual através de clique - Self-hosted
 
 # nome da pipeline
-name: 'Execução Manual - self-hosted'
+name: 'N1 - Execução Manual - self-hosted'
 
 # gatilhos / triggers - regras de disparo
 # gatilho manual = workflow_dispatch
